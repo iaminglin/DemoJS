@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css"/>
+    <style>
+        body{
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action = "/users/register">
+    <div class="form-group">
+        <label>用户名称</label>
+        <input name="userName"  placeholder="请输入名称">
+
+        <%if(Errors && Errors.userName){%>
+            <label><font color="#FF0000"><%= Errors.userName%></font></label>
+        <%}else{%>
+            <label>4-10</label>
+        <%}%>
+    </div>
+    <div class="form-group">
+        <label >用户密码</label>
+        <input name="password"   placeholder="请输入密码">
+
+        <%if(Errors && Errors.password){%>
+        <label><font color="#FF0000"><%= Errors.password%></font></label>
+        <%}else{%>
+        <label>4-10</label>
+        <%}%>
+    </div>
+    <div class="form-group">
+        <label>确认密码</label>
+        <input name="confirm" placeholder="请输入密码">
+        <%if(Errors && Errors.confirm){%>
+            <label><font color="#FF0000"><%= Errors.confirm%></font></label>
+        <%}%>
+    </div>
+    <button type="submit" class="btn btn-default">注册</button>
+</form>
+</body>
+</html>
