@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css"/>
+    <style>
+        body{
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+<label>用户名:<%=user.userName%></label>
+<form method="post" action = "/users/updatePWD">
+    <div class="form-group">
+        <label>旧密码</label>
+        <input name="oldPassword"  placeholder="请输入密码">
+        <%if(error.oldPassword){%>
+            <label><font color="red"><%= error.oldPassword%></font></label>
+        <%}%>
+    </div>
+    <div class="form-group">
+        <label >用户密码</label>
+        <input name="password"   placeholder="请输入密码">
+        <%if(error.password){%>
+        <label><font color="red"><%= error.password%></font></label>
+        <%}%>
+    </div>
+    <div class="form-group">
+        <label>确认密码</label>
+        <input name="confirm" placeholder="请输入密码">
+        <%if(error.confirm){%>
+        <label><font color="red"><%= error.confirm%></font></label>
+        <%}%>
+    </div>
+    <button type="submit" class="btn btn-default">更改密码</button>
+</form>
+</body>
+</html>
